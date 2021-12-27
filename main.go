@@ -11,6 +11,7 @@ import (
 	"sync"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/compiler/protogen"
 )
 
@@ -116,7 +117,7 @@ func (p *plugin) validate(required bool) error {
 			conn, err := grpc.Dial(
 				addr,
 				grpc.WithDefaultServiceConfig(string(data)),
-				grpc.WithInsecure(),
+				grpc.WithTransportCredentials(insecure.NewCredentials()),
 				grpc.WithBlock(),
 			)
 			if err != nil {
