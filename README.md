@@ -34,9 +34,9 @@ For example `src/example/v1/example_grpc_service_config.json`:
 Step 2: Run the protoc plugin
 -----------------------------
 
-Use the required `path` option to tell the generator where to load JSON files from.
-
-Use the optional `validate` option to validate that every package has a service config JSON, and that the format is valid.
+Use the required `path` option to tell the generator where to load JSON files from.  
+Use the optional `validate` option to validate that the service config format is valid.  
+Use the optional `required` option to require every service to have a service config.
 
 ```bash
 protoc
@@ -45,7 +45,8 @@ protoc
   --go-grpc_out=gen/go \
   --go-grpc-service-config_out=gen/go \
   --go-grpc-service-config_opt=path=src \
-  --go-grpc-service-config_opt=validate=true
+  --go-grpc-service-config_opt=validate=true \
+  --go-grpc-service-config_opt=required=true
 ```
 
 Your generated code output will now have a Go file corresponding to every service config JSON file.
