@@ -25,6 +25,18 @@ clean-sage:
 all: $(sagefile)
 	@$(sagefile) All
 
+.PHONY: buf-generate-example
+buf-generate-example: $(sagefile)
+	@$(sagefile) BufGenerateExample
+
+.PHONY: buf-lint
+buf-lint: $(sagefile)
+	@$(sagefile) BufLint
+
+.PHONY: buf-push
+buf-push: $(sagefile)
+	@$(sagefile) BufPush
+
 .PHONY: convco-check
 convco-check: $(sagefile)
 	@$(sagefile) ConvcoCheck
@@ -41,6 +53,10 @@ format-yaml: $(sagefile)
 git-verify-no-diff: $(sagefile)
 	@$(sagefile) GitVerifyNoDiff
 
+.PHONY: go-lint
+go-lint: $(sagefile)
+	@$(sagefile) GoLint
+
 .PHONY: go-mod-tidy
 go-mod-tidy: $(sagefile)
 	@$(sagefile) GoModTidy
@@ -53,6 +69,6 @@ go-review: $(sagefile)
 go-test: $(sagefile)
 	@$(sagefile) GoTest
 
-.PHONY: golangci-lint
-golangci-lint: $(sagefile)
-	@$(sagefile) GolangciLint
+.PHONY: protoc-gen-go-grpc-service-config
+protoc-gen-go-grpc-service-config: $(sagefile)
+	@$(sagefile) ProtocGenGoGrpcServiceConfig
