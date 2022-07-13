@@ -5,7 +5,7 @@ go 1.17
 require (
 	go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.2.1
 	go.buf.build/protocolbuffers/go/grpc/grpc v1.2.54
-	google.golang.org/grpc v1.47.0
+	google.golang.org/grpc v1.48.0
 	google.golang.org/protobuf v1.28.0
 )
 
