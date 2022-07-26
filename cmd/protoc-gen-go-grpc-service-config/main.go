@@ -92,7 +92,10 @@ func (p *plugin) generateFromProto() error {
 		g.P()
 		g.P("// DefaultServiceConfig is the default service config for all services in the package.")
 		g.P("// Source: ", file.Desc.Path(), ".")
-		g.P("const DefaultServiceConfig = `", protojson.MarshalOptions{}.Format(defaultServiceConfig), "`")
+		g.P("const DefaultServiceConfig = `", protojson.MarshalOptions{
+			Multiline: true,
+			Indent:    "  ",
+		}.Format(defaultServiceConfig), "`")
 	}
 	return nil
 }

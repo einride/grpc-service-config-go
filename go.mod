@@ -1,4 +1,4 @@
-module go.einride.tech/protoc-gen-go-grpc-service-config
+module go.einride.tech/grpc-service-config
 
 go 1.18
 
