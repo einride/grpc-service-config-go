@@ -3,11 +3,11 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: go.einride.tech/protoc-gen-go-grpc-service-config
+    default: go.einride.tech/grpc-service-config
     except:
       - buf.build/googleapis/googleapis
 
 plugins:
   - name: go-grpc-service-config
     out: internal/gen/proto
-    opt: module=go.einride.tech/protoc-gen-go-grpc-service-config
+    opt: module=go.einride.tech/grpc-service-config

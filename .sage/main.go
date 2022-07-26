@@ -105,6 +105,6 @@ func ProtocGenGoGrpcServiceConfig(ctx context.Context) error {
 		"build",
 		"-o",
 		sg.FromBinDir("protoc-gen-go-grpc-service-config"),
-		sg.FromGitRoot(),
+		"./cmd/protoc-gen-go-grpc-service-config",
 	).Run()
 }
