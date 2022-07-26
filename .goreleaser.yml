@@ -5,7 +5,7 @@ before:
 builds:
   - id: protoc-gen-go-grpc-service-config
     binary: protoc-gen-go-grpc-service-config
-    main: ./protoc-gen-go-grpc-service-config/main.go
+    main: ./cmd/protoc-gen-go-grpc-service-config/main.go
     env:
       - CGO_ENABLED=0
     goos:
