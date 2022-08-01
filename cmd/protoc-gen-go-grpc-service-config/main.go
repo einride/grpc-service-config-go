@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -80,6 +81,19 @@ func (p *plugin) generateFromProto() error {
 		if generatedPackages[file.Desc.Package()] {
 			return fmt.Errorf("package %s has multiple default_service_config annotations", file.Desc.Package())
 		}
+
+		jsonServiceConfig, err := protojson.MarshalOptions{
+			Multiline: true,
+		}.Marshal(defaultServiceConfig)
+		if err != nil {
+			return err
+		}
+
+		var formattedServiceConfig bytes.Buffer
+		if err := json.Indent(&formattedServiceConfig, jsonServiceConfig, "", "  "); err != nil {
+			return err
+		}
+
 		generatedPackages[file.Desc.Package()] = true
 		g := p.gen.NewGeneratedFile(
 			filepath.Dir(file.GeneratedFilenamePrefix)+
@@ -92,10 +106,7 @@ func (p *plugin) generateFromProto() error {
 		g.P()
 		g.P("// DefaultServiceConfig is the default service config for all services in the package.")
 		g.P("// Source: ", file.Desc.Path(), ".")
-		g.P("const DefaultServiceConfig = `", protojson.MarshalOptions{
-			Multiline: true,
-			Indent:    "  ",
-		}.Format(defaultServiceConfig), "`")
+		g.P("const DefaultServiceConfig = `", formattedServiceConfig.String(), "`")
 	}
 	return nil
 }
