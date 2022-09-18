@@ -3,7 +3,7 @@ syntax = "proto3";
 package einride.serviceconfig.v1;
 
 import "google/protobuf/descriptor.proto";
-import "grpc/service_config/service_config.proto";
+import "einride/serviceconfig/v1/service_config.proto";
 
 extend google.protobuf.FileOptions {
   // The `default_service_config` annotation provides default gRPC service
@@ -11,5 +11,5 @@ extend google.protobuf.FileOptions {
   //
   // Magic number is the 28 most significant bits in the sha256sum of
   // `einride.serviceconfig.v1.default_service_config`.
-  grpc.service_config.ServiceConfig default_service_config = 262421647;
+  ServiceConfig default_service_config = 262421647;
 }
