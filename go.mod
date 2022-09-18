@@ -3,8 +3,8 @@ module go.einride.tech/grpc-service-config
 go 1.18
 
 require (
-	go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.2.1
-	go.buf.build/protocolbuffers/go/grpc/grpc v1.2.54
+	go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.3.2
+	go.buf.build/protocolbuffers/go/grpc/grpc v1.3.54
 	google.golang.org/grpc v1.49.0
 	google.golang.org/protobuf v1.28.1
 )
