@@ -2,21 +2,15 @@ version: v1
 
 name: buf.build/einride/grpc-service-config
 
-deps:
-  - buf.build/grpc/grpc
+deps: []
 
 lint:
   use:
     - DEFAULT
   except:
-    - RPC_RESPONSE_STANDARD_NAME
-    - RPC_REQUEST_RESPONSE_UNIQUE
     - ENUM_VALUE_PREFIX
-  ignore:
-    - google
+    - ENUM_ZERO_VALUE_SUFFIX
 
 breaking:
   use:
     - PACKAGE
-  ignore:
-    - google
