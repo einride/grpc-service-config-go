@@ -51,8 +51,8 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 go.buf.build/protocolbuffers/go/cncf/xds v1.2.14/go.mod h1:hq9vhcZd4ZTK2iCNk4F8oyZAxq1iz/LJUQUiNjF8gZQ=
-go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.2.1 h1:QqsSxCQvwCHPWIUCyNtpI+A4tD4+V00BgdcnOhoXNbw=
-go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.2.1/go.mod h1:kgQcZlW4PmcEACPrzYB5NGsdzqvNd4J9bn5fMjv//wo=
+go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.3.3 h1:o7VOQ1GUysSVbhxrAUqmqTSuVPoHY1uYkx88VIDfEZ8=
+go.buf.build/protocolbuffers/go/einride/grpc-service-config v1.3.3/go.mod h1:6IB/7iOFF7EYvb0kxe2a8AWjVqIsxFbJqgdAGOUX3uA=
 go.buf.build/protocolbuffers/go/envoyproxy/envoy v1.2.161/go.mod h1:yZ3Q0ckzdHykCgNkMsFgLqBUINk15M+fG2HB8rKPwn0=
 go.buf.build/protocolbuffers/go/envoyproxy/protoc-gen-validate v1.2.6/go.mod h1:rFeh5GJ10STGBM5uR3XCCgIPQAoOHxKgoAdeLRWtvHU=
 go.buf.build/protocolbuffers/go/grpc/grpc v1.2.54 h1:hHkd95hdd3rLsFdKAat+l157/1v9fcFAIvgL62RfY78=
