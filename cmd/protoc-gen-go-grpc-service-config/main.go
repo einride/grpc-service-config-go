@@ -74,7 +74,7 @@ func (p *plugin) generateFromProto() error {
 		defaultServiceConfig := proto.GetExtension(
 			file.Proto.GetOptions(),
 			serviceconfigv1.E_DefaultServiceConfig,
-		).(*service_config.ServiceConfig)
+		).(*serviceconfigv1.ServiceConfig)
 		if defaultServiceConfig == nil {
 			continue
 		}
