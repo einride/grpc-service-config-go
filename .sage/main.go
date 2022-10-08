@@ -43,7 +43,7 @@ func BufPush(ctx context.Context) error {
 
 func FormatYAML(ctx context.Context) error {
 	sg.Logger(ctx).Println("formatting YAML files...")
-	return sgyamlfmt.Command(ctx, "-d", sg.FromGitRoot(), "-r").Run()
+	return sgyamlfmt.Run(ctx)
 }
 
 func GoModTidy(ctx context.Context) error {

@@ -10,7 +10,6 @@ import (
 	"sync"
 
 	serviceconfigv1 "go.buf.build/protocolbuffers/go/einride/grpc-service-config/einride/serviceconfig/v1"
-	"go.buf.build/protocolbuffers/go/grpc/grpc/grpc/service_config"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/compiler/protogen"
@@ -163,12 +162,12 @@ func (p *plugin) validate(required bool) error {
 }
 
 func (p *plugin) resolveServiceConfig(service *protogen.Service) (string, bool, error) {
-	var serviceConfig *service_config.ServiceConfig
+	var serviceConfig *serviceconfigv1.ServiceConfig
 	p.files.RangeFilesByPackage(service.Desc.ParentFile().Package(), func(file protoreflect.FileDescriptor) bool {
 		serviceConfig = proto.GetExtension(
 			file.Options(),
 			serviceconfigv1.E_DefaultServiceConfig,
-		).(*service_config.ServiceConfig)
+		).(*serviceconfigv1.ServiceConfig)
 		return serviceConfig == nil
 	})
 	if serviceConfig == nil {
