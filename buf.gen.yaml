@@ -1,0 +1,12 @@
+version: v1
+
+managed:
+  enabled: true
+  go_package_prefix:
+    default: go.einride.tech/grpc-service-config/gen
+
+plugins:
+  - name: go
+    out: gen
+    opt:
+      - module=go.einride.tech/grpc-service-config/gen

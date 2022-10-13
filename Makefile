@@ -47,6 +47,10 @@ clean-sage:
 all: $(sagefile)
 	@$(sagefile) All
 
+.PHONY: buf-generate
+buf-generate: $(sagefile)
+	@$(sagefile) BufGenerate
+
 .PHONY: buf-generate-example
 buf-generate-example: $(sagefile)
 	@$(sagefile) BufGenerateExample
@@ -90,6 +94,10 @@ go-review: $(sagefile)
 .PHONY: go-test
 go-test: $(sagefile)
 	@$(sagefile) GoTest
+
+.PHONY: protoc-gen-go
+protoc-gen-go: $(sagefile)
+	@$(sagefile) ProtocGenGo
 
 .PHONY: protoc-gen-go-grpc-service-config
 protoc-gen-go-grpc-service-config: $(sagefile)
