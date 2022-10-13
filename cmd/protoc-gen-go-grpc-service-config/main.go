@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"sync"
 
-	serviceconfigv1 "go.buf.build/protocolbuffers/go/einride/grpc-service-config/einride/serviceconfig/v1"
+	serviceconfigv1 "go.einride.tech/grpc-service-config/gen/einride/serviceconfig/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/compiler/protogen"
