@@ -1,15 +1,15 @@
-gRPC Service Config
-===================
+# gRPC Service Config
 
-[gRPC service config](https://github.com/grpc/grpc/blob/master/doc/service_config.md) without service discovery, by specifying the service config via file annotations and including it in the generated code.
+[gRPC service config](https://github.com/grpc/grpc/blob/master/doc/service_config.md)
+without service discovery, by specifying the service config via file annotations
+and including it in the generated code.
 
-How to
-======
+# How to
 
-Step 1: Add a service config file annotation to your package
-------------------------------------------------------------
+## Step 1: Add a service config file annotation to your package
 
-For example [einride/serviceconfig/example/v1/default_service_config.proto](./einride/serviceconfig/example/v1/default_service_config.proto):
+For example
+[einride/serviceconfig/example/v1/default_service_config.proto](./einride/serviceconfig/example/v1/default_service_config.proto):
 
 ```proto
 syntax = "proto3";
@@ -40,10 +40,11 @@ option (einride.serviceconfig.v1.default_service_config) = {
 };
 ```
 
-Step 2: Run the protoc plugin
------------------------------
+## Step 2: Run the protoc plugin
 
-Use the optional `validate` option to validate that the service config format is valid. Use the optional `required` option to require every service to have a service config.
+Use the optional `validate` option to validate that the service config format is
+valid. Use the optional `required` option to require every service to have a
+service config.
 
 ```bash
 protoc
@@ -55,9 +56,11 @@ protoc
   --go-grpc-service-config_opt=required=true
 ```
 
-Your generated code output will now have a Go file corresponding to every service config JSON file.
+Your generated code output will now have a Go file corresponding to every
+service config JSON file.
 
-For example [example_grpc_service_config.pb.go](./internal/gen/proto/einride/serviceconfig/example/v1/example_grpc_service_config.pb.go):
+For example
+[example_grpc_service_config.pb.go](./internal/gen/proto/einride/serviceconfig/example/v1/example_grpc_service_config.pb.go):
 
 ```go
 package examplev1
@@ -81,8 +84,7 @@ const DefaultServiceConfig = `{
 `
 ```
 
-Step 3: Use your bundled service config when dialing
-----------------------------------------------------
+## Step 3: Use your bundled service config when dialing
 
 ```go
 conn, err := grpc.DialContext(
