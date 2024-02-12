@@ -2,13 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: grpc-service-config-go
+  title: gRPC Service Config Go
   description: |
     Setup gRPC service config without service discovery, by specifying the service config via file annotations and including it in the generated code.
-  annotations:
-    github.com/project-slug: einride/grpc-service-config-go
-    github.com/team-slug: einride/team-cloud-control
-    backstage.io/source-location: url:https://github.com/einride/grpc-service-config-go/tree/master/
 spec:
-  type: library
+  type: go-library
+  system: backend-sdk
   lifecycle: production
-  owner: team-cloud-control
+  owner: platform-engineering
