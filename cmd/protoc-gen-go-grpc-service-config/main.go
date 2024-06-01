@@ -133,11 +133,10 @@ func (p *plugin) validate(required bool) error {
 				)
 			}
 			// gRPC Go validates a service config when dialing.
-			conn, err := grpc.Dial(
+			conn, err := grpc.NewClient(
 				addr,
 				grpc.WithDefaultServiceConfig(serviceConfig),
 				grpc.WithTransportCredentials(insecure.NewCredentials()),
-				grpc.WithBlock(),
 			)
 			if err != nil {
 				return fmt.Errorf("validate: invalid service config for %s: %w", service.Desc.FullName(), err)
