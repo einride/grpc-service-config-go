@@ -98,10 +98,6 @@ ifndef snapshot
 endif
 	@$(sagefile) GoReleaser "$(snapshot)"
 
-.PHONY: go-review
-go-review: $(sagefile)
-	@$(sagefile) GoReview
-
 .PHONY: go-test
 go-test: $(sagefile)
 	@$(sagefile) GoTest
