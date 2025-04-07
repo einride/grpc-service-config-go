@@ -1,5 +1,7 @@
 module go.einride.tech/grpc-service-config/.sage
 
-go 1.20
+go 1.22
+
+toolchain go1.24.1
 
 require go.einride.tech/sage v0.354.0
