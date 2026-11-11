@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -199,7 +200,8 @@ func (c serviceConfigJSON) hasService(service *protogen.Service) bool {
 }
 
 func (p *plugin) startLocalServer() (string, func(), error) {
-	lis, err := net.Listen("tcp", "localhost:0")
+	var lc net.ListenConfig
+	lis, err := lc.Listen(context.Background(), "tcp", "localhost:0")
 	if err != nil {
 		return "", nil, err
 	}

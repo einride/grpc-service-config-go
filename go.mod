@@ -1,6 +1,6 @@
 module go.einride.tech/grpc-service-config
 
-go 1.23.0
+go 1.26.11
 
 require (
 	google.golang.org/grpc v1.74.2
